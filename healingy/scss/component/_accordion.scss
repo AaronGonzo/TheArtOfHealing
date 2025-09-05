@@ -1,0 +1,55 @@
+.tf-accordion {
+    .tf-accordion-item {
+        &:not(:last-child) {
+            margin-bottom: 31px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--Outline);
+        }
+    }
+    .tf-accordion-body {
+        p {
+            padding-top: 12px;
+        }
+    }
+    .accordion-header {
+        cursor: pointer;
+        .title {
+            @include flex(center, space-between);
+            &:not(.collapsed) {
+                .icon {
+                    &::before {
+                        transform: translate(-50%, -50%) rotate(90deg);
+                    }
+                }
+            }
+        }
+    }
+    .icon {
+        display: block;
+        position: relative;
+        height: 18px;
+        width: 18px;
+        cursor: pointer;
+        &::after {
+            content: "";
+            position: absolute;
+            width: 18px;
+            height: 2px;
+            background-color: var(--Primary);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            height: 18px;
+            width: 2px;
+            background-color: var(--Primary);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @include transition3();
+        }
+    }
+}

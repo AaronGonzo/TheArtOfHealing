@@ -1,0 +1,173 @@
+.hover-img {
+    .image-wrap {
+        overflow: hidden;
+        img {
+            object-fit: cover;
+            -webkit-transition: all 1s cubic-bezier(0.3, 1, 0.35, 1) 0s;
+            transition: all 1s cubic-bezier(0.3, 1, 0.35, 1) 0s;
+        }
+    }
+
+    &:hover {
+        .image-wrap {
+            img {
+                -webkit-transform: scale3d(1.1, 1.1, 1.1);
+                transform: scale3d(1.1, 1.1, 1.1);
+            }
+        }
+    }
+}
+
+$size: 6px;
+$speed: 3s;
+$peakopacity: 0.7;
+
+@keyframes arrows {
+    0% {
+        border-left: $size/3 solid rgba(0, 0, 0, 0);
+        border-bottom: $size/3 solid rgba(0, 0, 0, 0);
+        transform: translate($size/-6, $size * 4/-6) rotate(-45deg);
+    }
+    10%,
+    90% {
+        border-left: $size/3 solid rgba(0, 0, 0, 0);
+        border-bottom: $size/3 solid rgba(0, 0, 0, 0);
+    }
+    50% {
+        border-left: $size/3 solid rgba(0, 0, 0, $peakopacity);
+        border-bottom: $size/3 solid rgba(0, 0, 0, $peakopacity);
+        transform: translate($size/-6, 0px) rotate(-45deg);
+    }
+    100% {
+        border-left: $size/3 solid rgba(0, 0, 0, 0);
+        border-bottom: $size/3 solid rgba(0, 0, 0, 0);
+        transform: translate($size/-6, $size * 4/6) rotate(-45deg);
+    }
+}
+
+.effec-overlay {
+    position: relative;
+    overflow: hidden;
+    img {
+        object-fit: cover;
+        -webkit-transition: all 1s cubic-bezier(0.3, 1, 0.35, 1) 0s;
+        transition: all 1s cubic-bezier(0.3, 1, 0.35, 1) 0s;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 0%;
+        background-color: rgba(0, 0, 0, 0.2);
+        left: 0;
+        @include transition5();
+        z-index: 6;
+        bottom: 0;
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 0%;
+        background-color: rgba(0, 0, 0, 0.2);
+        right: 0;
+        top: 0;
+        z-index: 6;
+        @include transition5();
+    }
+    &:hover {
+        img {
+            transform: scale(1.1);
+        }
+        &::after {
+            height: 100%;
+        }
+        &::before {
+            height: 100%;
+        }
+    }
+}
+.effec-icon {
+    .icon,
+    .item {
+        i,
+        svg {
+            transition: all 0.6s ease-in-out;
+        }
+    }
+    &:hover {
+        .icon,
+        .item {
+            i,
+            svg {
+                transform: rotateY(180deg);
+            }
+        }
+    }
+}
+
+.animation-float,
+.animation-float-small {
+    animation: float 2s linear 0.5s infinite alternate both;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(10px);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+        box-shadow: 0 2px 0 var(--Primary);
+    }
+
+    50% {
+        transform: rotate(180deg);
+        box-shadow: 0 2px 0 var(--Primary);
+    }
+
+    100% {
+        transform: rotate(360deg);
+        box-shadow: 0 2px 0 var(--Primary);
+    }
+}
+
+@keyframes tf-ani-flash {
+    50%,
+    0%,
+    100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+@keyframes rotating {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+

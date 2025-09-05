@@ -1,0 +1,19 @@
+// settings
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+$font-main: "Archivo", sans-serif;
+$fontIcon: "icomoon";
+
+:root {
+    --Black: #000000;
+    --White: #ffffff;
+    --Primary: #3c210e;
+    --Secondary: #fedac2;
+    --Third: #f4d118;
+    --Four: #c72929;
+    --Color-1: #f5f1ed;
+    --Color-3: #5e5a56;
+    --Color-4: #28221D;
+    --Outline: #e4e4e4;
+    --Placeholder: #abb0b4;
+    --Border: rgba(255, 255, 255, 0.1);
+}

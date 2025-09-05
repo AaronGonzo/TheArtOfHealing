@@ -1,0 +1,374 @@
+form {
+    position: relative;
+    z-index: 30;
+    textarea,
+    input[type="text"],
+    input[type="password"],
+    input[type="datetime"],
+    input[type="datetime-local"],
+    input[type="date"],
+    input[type="month"],
+    input[type="time"],
+    input[type="week"],
+    input[type="number"],
+    input[type="email"],
+    input[type="url"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="color"] {
+        outline: 0;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        width: 100%;
+        padding: 11px 16px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+        background-color: var(--White);
+        border: 1px solid var(--Outline);
+        border-radius: 8px;
+        color: var(--Primary);
+        overflow: hidden;
+        margin-bottom: 0;
+        &::placeholder {
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 28px;
+            color: var(--Placeholder);
+        }
+
+        &.style-1 {
+            font-size: 14px;
+            padding: 12px 16px;
+            border-radius: 4px;
+        }
+        &.style-2 {
+            border-radius: 8px;
+        }
+    }
+    .cols {
+        @include flex(center, center);
+        gap: 23px 16px;
+        width: 100%;
+        fieldset {
+            width: 100%;
+        }
+        .select-custom {
+            width: 100%;
+        }
+    }
+
+    button,
+    input[type="button"],
+    input[type="reset"],
+    input[type="submit"] {
+        background-color: transparent;
+        overflow: hidden;
+        padding: 0;
+    }
+    textarea {
+        height: 160px;
+    }
+    select {
+        font-size: 14px;
+        line-height: 22px;
+        padding: 11px 16px;
+        border: 1px solid var(--Outline);
+        border-radius: 8px;
+        position: relative;
+        appearance: none;
+        cursor: pointer;
+        width: 100%;
+        background-color: transparent;
+        &:focus-visible {
+            border: 1px solid var(--Outline);
+        }
+    }
+    &.tf-radio {
+        height: 14px;
+        width: 14px;
+    }
+}
+
+.box-send {
+    margin-bottom: 80px;
+    .title {
+        margin-bottom: 24px;
+        letter-spacing: -0.6px;
+    }
+    .message {
+        margin-bottom: 20px;
+    }
+    .tf-btn {
+        margin-top: 23px;
+    }
+    &.style-2 {
+        margin-bottom: 0;
+        .title {
+            margin-bottom: 15px;
+        }
+        .cols {
+            margin-bottom: 20px;
+            label {
+                line-height: 26px;
+                margin-bottom: 8px;
+
+                position: relative;
+                &::after {
+                    position: absolute;
+                    content: "*";
+                    color: var(--Four);
+                }
+            }
+        }
+        .message {
+            textarea {
+                height: 100px;
+            }
+            label {
+                line-height: 26px;
+                margin-bottom: 8px;
+            }
+        }
+        input {
+            &:focus-visible {
+                border: 1px solid var(--Secondary);
+            }
+        }
+        .tf-btn {
+            margin-top: 20px;
+        }
+        .checkbox-item {
+            label {
+                padding-left: 22px;
+                .btn-checkbox {
+                    width: 18px;
+                    height: 18px;
+                }
+            }
+        }
+    }
+}
+
+.select-custom {
+    position: relative;
+    background-color: var(--White);
+    &::after {
+        position: absolute;
+        content: "\e901";
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: $fontIcon;
+        right: 16px;
+        font-size: 20px;
+    }
+}
+
+.form-send-email {
+    width: 100%;
+    fieldset input {
+        padding: 17px 90px 17px 24px;
+        background-color: var(--Border);
+        border: none;
+        color: var(--White);
+    }
+    .button-submit {
+        position: absolute;
+        @include flex(center, center);
+        right: 0;
+        top: 50%;
+        @include center(0, -50%);
+        background-color: var(--Secondary);
+        border-radius: 0 8px 8px 0;
+        button {
+            font-size: 28px;
+            cursor: pointer;
+            height: 60px;
+            width: 60px;
+        }
+        &:hover {
+            button {
+                animation: effect-send 0.4s ease-in;
+            }
+        }
+    }
+}
+
+.form-consultation {
+    padding: 29.5px 28px;
+    border-radius: 16px;
+    background-color: var(--White);
+    fieldset {
+        margin-bottom: 20px;
+        input {
+            height: 49px;
+        }
+    }
+    select {
+        height: 49px;
+        border-radius: 4px;
+    }
+    .tf-dropdown-sort {
+        margin-bottom: 20px;
+    }
+    textarea {
+        height: 86px;
+    }
+    .message {
+        margin-bottom: 20px;
+    }
+    .tf-btn {
+        width: 100%;
+    }
+    .error{
+        color: var(--Four);
+        padding-top: 10px;
+    }
+}
+.form-info {
+    .cols {
+        margin-bottom: 20px;
+        gap: 20px 16px;
+        input {
+            height: 48px;
+        }
+    }
+    > .tf-dropdown-sort {
+        margin-bottom: 20px;
+    }
+    .tf-dropdown-sort {
+        &.tf-choose-item {
+            border-radius: 8px;
+        }
+    }
+    select {
+        height: 48px;
+    }
+    textarea {
+        height: 100px;
+    }
+}
+.form-payment {
+    .payment-option {
+        padding: 11px 20px;
+        border-radius: 8px;
+        border: 1px solid var(--Outline);
+        &:not(:last-child) {
+            margin-bottom: 19px;
+        }
+        .radio-item {
+            label {
+                padding-left: 20px;
+                input {
+                    height: unset;
+                }
+            }
+        }
+        &.active {
+            background-color: var(--Color-1);
+            padding: 20px 20px;
+        }
+    }
+    input {
+        height: 48px;
+    }
+}
+.form-login {
+    padding: 11px 20px 19px;
+    border-radius: 8px;
+    border: 1px solid var(--Outline);
+    .title {
+        position: relative;
+        &::after {
+            position: absolute;
+            content: "*";
+            color: var(--Four);
+        }
+        margin-bottom: 8px;
+    }
+    .cols {
+        margin-bottom: 12px;
+    }
+    input {
+        height: 48px;
+    }
+}
+.form-appointment {
+    textarea {
+        height: 86px;
+    }
+    .tf-btn {
+        margin-top: 18px;
+        width: 100%;
+    }
+    .cols {
+        margin-bottom: 20px;
+        gap: 23px 20px;
+    }
+    select {
+        height: 49px;
+    }
+    input {
+        height: 49px;
+    }
+}
+.form-fill-card {
+    margin-top: 8px;
+    p {
+        margin-bottom: 19px;
+    }
+    .card-number {
+        position: relative;
+        input {
+            padding-right: 152px;
+        }
+        .list-payment {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            @include d-flex();
+            gap: 11px;
+        }
+    }
+    .checkbox-item {
+        margin-top: 19px;
+    }
+}
+
+.form-coupon {
+    width: 100%;
+    position: relative;
+    input {
+        height: 56px;
+    }
+    .tf-btn {
+        position: absolute;
+        border-radius: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 40px;
+        right: 8px;
+    }
+}
+
+
+@keyframes effect-send {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    49% {
+        transform: translate3d(42px, -39px, 38px);
+        opacity: 0;
+    }
+    50% {
+        transform: translate3d(-42px, 39px, 38px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

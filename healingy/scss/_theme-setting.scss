@@ -1,0 +1,134 @@
+.switcher-container {
+    position: fixed;
+    right: -290px;
+    top: 150px;
+    width: 290px;
+    background-color: var(--Placeholder);
+    z-index: 99999999;
+    box-shadow: 0px 10px 25px rgba(54, 95, 104, 0.1);
+    .title {
+        color: var(--Primary);
+        height: 50px;
+        margin: 0;
+        font-weight: 400;
+        @include flex(center, center);
+        border-bottom: 1px solid var(--Outline);
+        .btn-setting {
+            background-color: var(--Primary);
+            @include flex(center, center);
+            position: absolute;
+            left: -50px;
+            top: 0;
+            outline: 0;
+            a {
+                width: 50px;
+                height: 50px;
+                @include flex(center, center);
+                color: var(--White);
+                -webkit-animation: rotating 1s infinite linear;
+                animation: rotating 3s infinite linear;
+                font-size: 26px;
+            }
+        }
+    }
+    .tf-btn {
+        margin: 10px auto 10px;
+    }
+    .sw-odd {
+        background-color: var(--Color-1);
+        padding: 21px 15px 30px;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+        -o-transition: all 0.3s;
+        transition: all 0.3s;
+        border-bottom: 1px solid var(--Outline);
+        .title-color {
+            color: var(--Primary);
+            margin-bottom: 20px;
+        }
+        .ws-colors {
+            @include d-flex();
+            gap: 10px;
+            a {
+                width: auto;
+                padding: 0;
+                width: 40px;
+                height: 40px;
+                background-color: #3c210e;
+                text-indent: -9999px;
+                border-radius: 50%;
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.switcher-container .title .switcher-container .title a:hover,
+.switcher-container .title a:focus {
+    text-decoration: none;
+}
+
+.modal-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 10px;
+}
+.color-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+    .check-color {
+        display: none;
+    }
+    label {
+        width: 55px;
+        height: 55px;
+        border-radius: 999px;
+        position: relative;
+        display: block;
+        &::after {
+            content: "\e918";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: none;
+            transform: translate(-50%, -50%);
+            font-family: $fontIcon;
+            font-weight: 900;
+            font-size: 16px;
+            color: var(--White);
+        }
+    }
+    input:checked + label {
+        &:after {
+            display: block;
+        }
+    }
+}
+
+input[value="theme-primary"] + label {
+    background-color: #fedac2;
+}
+input[value="theme-green"] + label {
+    background-color: #378c4c;
+}
+
+input[value="theme-blue-2"] + label {
+    background-color: #a7dbd8;
+}
+
+input[value="theme-orange-3"] + label {
+    background-color: #f2949c;
+}
+
+input[value="theme-blue-3"] + label {
+    background-color: #4ecdc4;
+}
+
+input[value="theme-dark"] + label {
+    background-color: #6f91a6;
+}

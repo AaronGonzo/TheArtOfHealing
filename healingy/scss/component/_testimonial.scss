@@ -1,0 +1,45 @@
+.wg-testimonial {
+    padding: 69px 20px 60px 18px;
+    .rating {
+        margin-bottom: 24px;
+        i {
+            font-size: 24px;
+            color: var(--Primary);
+        }
+    }
+
+    .bot {
+        @include flex(flex-end, space-between);
+        .title {
+            margin-bottom: 4px;
+        }
+        p {
+            color: var(--Color-3);
+        }
+    }
+    &.style-text-center {
+        padding: 40px;
+        border-radius: 16px;
+        background-color: var(--White);
+        .rating {
+            justify-content: center;
+        }
+        .content {
+            text-align: center;
+        }
+        .bot {
+            justify-content: center;
+        }
+    }
+    &.style-full {
+        background-color: var(--Color-1);
+        max-width: 926.02px;
+        margin: 0 auto;
+        padding: 0 0 53px;
+        .info {
+            @include d-flex();
+            gap: 4px;
+            align-items: center;
+        }
+    }
+}

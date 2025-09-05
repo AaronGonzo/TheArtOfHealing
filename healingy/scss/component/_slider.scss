@@ -1,0 +1,167 @@
+.page-title-homepage-3,
+.page-title-homepage-4 {
+    .pagination-page-title-home {
+        bottom: 28px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include d-flex();
+        gap: 19px;
+        .swiper-pagination-bullet {
+            background-color: var(--White);
+            position: relative;
+            &::before {
+                position: absolute;
+                content: "";
+                height: 16px;
+                width: 16px;
+                border-radius: 999px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            &.swiper-pagination-bullet-active {
+                &::after {
+                    position: absolute;
+                    content: "";
+                    height: 16px;
+                    width: 16px;
+                    border-radius: 999px;
+                    border: 1px solid var(--White);
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+}
+.page-title-homepage-4 {
+    .button {
+        border-radius: 999px;
+        color: var(--White);
+        background-color: var(--Primary);
+        @include transition3();
+        height: 60px;
+        width: 60px;
+        top: 53%;
+        transform: translateY(-50%);
+        font-size: 28px;
+        &.swiper-button-disabled {
+            background-color: var(--White);
+            color: var(--Primary);
+            opacity: 1;
+        }
+        &:hover {
+            background-color: var(--White);
+            color: var(--Primary);
+        }
+    }
+    .swiper-button-prev {
+        left: 40px;
+        &::after {
+            display: none;
+        }
+    }
+    .swiper-button-next {
+        right: 40px;
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.style-pagination {
+    position: relative;
+    .swiper-pagination {
+        position: unset;
+        @include d-flex();
+        gap: 20px;
+        &.pagination-layout {
+            display: none;
+        }
+        &.pagination-testimonial-1 {
+            display: none;
+        }
+    }
+    .swiper-pagination-bullet {
+        position: relative;
+        background-color: var(--White);
+        border: 1px solid var(--Primary);
+        opacity: 1;
+        &::after {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            border-radius: 999px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        &.swiper-pagination-bullet-active {
+            background-color: var(--Primary);
+            &::after {
+                position: absolute;
+                content: "";
+                height: 16px;
+                width: 16px;
+                border-radius: 999px;
+                border: 1px solid var(--Primary);
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+.slider-testimonial {
+    .pagination-testimonial {
+        max-width: max-content;
+        bottom: 73px;
+        left: 13px;
+    }
+    .swiper-wrapper {
+        height: auto;
+    }
+}
+
+.slider-layout-3 {
+    .swiper-slide {
+        height: auto;
+    }
+}
+
+.slide-effect-fade {
+    .swiper-slide {
+        .fade-item {
+            transform: translateY(100px);
+            opacity: 0;
+            visibility: hidden;
+            @include transition3();
+        }
+        &.swiper-slide-active {
+            .fade-item {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+                &.fade-item1 {
+                    transition-delay: 0.2s;
+                    transition-duration: 0.9s;
+                }
+                &.fade-item2 {
+                    transition-delay: 0.4s;
+                    transition-duration: 0.9s;
+                }
+                &.fade-item3 {
+                    transition-delay: 0.6s;
+                    transition-duration: 0.9s;
+                }
+                &.fade-item4 {
+                    transition-delay: 0.8s;
+                    transition-duration: 0.9s;
+                }
+            }
+        }
+    }
+}

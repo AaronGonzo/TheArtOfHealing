@@ -1,0 +1,54 @@
+.map-box {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+
+    .marker {
+        cursor: pointer;
+        position: relative;
+        &::after {
+            @include flex(center, center);
+            content: "\e90a";
+            font-family: $fontIcon;
+            position: absolute;
+            font-size: 28px;
+            height: 44px;
+            width: 44px;
+            top: 50%;
+            left: 50%;
+            background-color: var(--White);
+            transform: translate(-50%, -50%);
+            font-weight: 500;
+            z-index: -1;
+            border-radius: 999px;
+        }
+        &::before {
+            content: "";
+            position: absolute;
+            font-size: 28px;
+            height: 60px;
+            width: 60px;
+            top: 50%;
+            left: 50%;
+            background-color: var(--Primary);
+            opacity: 0.1;
+            transform: translate(-50%, -50%);
+            font-weight: 500;
+            z-index: -1;
+            border-radius: 999px;
+        }
+    }
+}
+
+.mapboxgl-ctrl-attrib a,
+.mapboxgl-ctrl-attrib.mapboxgl-compact,
+a.mapboxgl-ctrl-logo {
+    display: none !important;
+}
