@@ -1492,7 +1492,6 @@ a:hover, a:focus {
   display: flex;
   flex-direction: column;
   border-top: 1px solid var(--Outline);
-  padding-top: 15px;
 }
 .inner-mobile-nav #menu-mobile-menu > li {
   position: relative;
@@ -6555,7 +6554,7 @@ a.mapboxgl-ctrl-logo {
   padding: 0;
 }
 .section-contact.page-contact {
-  margin-top: -80px;
+  margin-top: 40px;
 }
 
 /*section-team 
@@ -6587,7 +6586,7 @@ a.mapboxgl-ctrl-logo {
 }
 .section-cta .box-cta {
   padding: 26px 0;
-  max-width: 541px;
+  /* max-width: 541px; */
 }
 .section-cta .box-cta .heading-section {
   margin-bottom: 32px;
