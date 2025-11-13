@@ -6098,6 +6098,22 @@ a.mapboxgl-ctrl-logo {
   object-fit: cover;
 }
 
+.mobile-img{
+  display: none;
+}
+
+@media (max-width: 500px) {
+.desktop-img
+{
+  display: none;
+
+}
+.mobile-img{
+  display: block;
+}
+
+}
+
 /*page-title-homepage-3,4
 ------------------------------------------------------------------------------*/
 .page-title-homepage-3,
