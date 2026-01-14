@@ -5,6 +5,8 @@ export async function onRequestPost(context) {
     const name = formData.get('name');
     const email = formData.get('email');
     const message = formData.get('message');
+    const phone = formData.get('phone');
+    const service = formData.get('service');
     // Add other fields as needed, e.g., const phone = formData.get('phone');
 
     // 2. Prepare the email data for Resend
@@ -14,6 +16,8 @@ export async function onRequestPost(context) {
       reply_to: email,
       subject: `New Contact from ${name}`,
       html: `<p><strong>Name:</strong> ${name}</p>
+              <p><strong>Phone:</strong> ${phone}</p>
+              <p><strong>Service:</strong> ${service}</p>
              <p><strong>Email:</strong> ${email}</p>
              <p><strong>Message:</strong><br/>${message}</p>`
     };
